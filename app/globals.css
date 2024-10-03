@@ -2,26 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .font-pixelify {
+    font-family: var(--font-pixelify-sans);
   }
+
+  .background-inicio {
+    background-image: url('/tela-inicio.png');
+    background-size: cover;
+    image-rendering: pixelated;
+    position: fixed;
+    width: 100vw;
+    height: 1000px;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .background-b1 {
+    background-image: url('/B1.png');
+    background-size: cover;
+    image-rendering: pixelated;
+    position: fixed;
+    width: 100vw;
+    height: 1400px;
+    overflow: hidden;
+    transform: translateY(-455px);
+    z-index: -1;
+  }
+
+  .background-b2 {
+    background-image: url('/B2.png');
+    background-size: cover;
+    image-rendering: pixelated;
+    position: fixed;
+    width: 100vw;
+    height: 1400px;
+    overflow: hidden;
+    transform: translateY(-360px);
+    z-index: -1;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
 }
