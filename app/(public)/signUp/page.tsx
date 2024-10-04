@@ -1,16 +1,23 @@
 "use client"
 
+import createUser, { CreateUserInterface } from "@/app/lib/auth/createUser"
 import { SyntheticEvent, useState } from "react"
 
 export default function SingIn() {
-    const [userName, setUserName] = useState("")
+    const [username, setUserName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     async function handleSubmit(event: SyntheticEvent) {
         event.preventDefault()
 
-        //comunicacao backend
+        const user: CreateUserInterface = {
+            username,
+            email,
+            password
+        }
+
+        const response = await createUser(user)
 
         //redirecionar
     }

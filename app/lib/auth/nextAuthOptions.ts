@@ -11,18 +11,21 @@ export const nextAuthOptions: NextAuthOptions = {
             },
 
             async authorize(credentials, req) {
-                const response = await fetch(`http://localhost:4000/login`, {
+                const response = await fetch(`http://201.23.18.145:4000/session`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
                         email: credentials?.email,
-                        senha: credentials?.password
+                        password: credentials?.password
                     })
                 })
 
                 const user = await response.json()
+
+                console.log(user)
+
                 if (user && response.ok) {
                     return user
                 }
@@ -31,7 +34,7 @@ export const nextAuthOptions: NextAuthOptions = {
     ],
     pages: {
         signIn: "/login",
-        newUser: "/newUser"
+        newUser: "/signUp"
     },
     callbacks: {
         async jwt({ token, user }) {

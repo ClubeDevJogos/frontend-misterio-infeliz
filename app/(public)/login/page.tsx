@@ -1,9 +1,12 @@
 "use client"
 
 import { signIn } from "next-auth/react"
+import { useRouter } from "next/navigation"
 import { SyntheticEvent, useState } from "react"
 
 export default function Login() {
+    const router = useRouter()
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -16,7 +19,9 @@ export default function Login() {
             redirect: false
         })
 
-        //redirecionar
+        if (result!.ok) {
+            router.replace("/game/b1")
+        }
     }
 
     return (
