@@ -1,17 +1,19 @@
 "use client"
 
 import { useState, useEffect } from 'react';
+import Typewriter from './typewriter';
 
 interface CaptionProps {
     captions: Array<{
         name: string;
         content: string;
-    }>;
+    }>,
+    enable: Boolean
 }
 
-export default function Caption({ captions }: CaptionProps) {
+export default function Caption({ captions, enable }: CaptionProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [showCaptions, setShowCaptions] = useState(true);
+    const [showCaptions, setShowCaptions] = useState(enable);
 
     const handleKeyPress = (e: KeyboardEvent) => {
         if (e.key === 'e') {
@@ -39,7 +41,9 @@ export default function Caption({ captions }: CaptionProps) {
                     <div className="w-[1200px] bg-black opacity-90 border-4 border-gray-800">
                         <div className="p-4">
                             <p className="text-xl font-bold text-yellow-700 pt-2">{captions[currentIndex].name}</p>
-                            <p className="text-white text-lg mt-2">{captions[currentIndex].content}</p>
+                            <p className="text-white text-lg mt-2">
+                                <Typewriter textValue={captions[currentIndex].content} />
+                            </p>
                         </div>
                     </div>
                 </div>

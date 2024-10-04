@@ -39,7 +39,7 @@ export default function ActionMenu() {
             )}
             {settings && (
                 <div className='w-screen h-screen flex items-center justify-center absolute bg-black bg-opacity-60'>
-                    <div className='w-[1000px] h-[600px] bg-zinc-200 rounded'>
+                    <div className='w-[1000px] h-[600px] bg-gray-700 rounded'>
 
                     </div>
                 </div>
