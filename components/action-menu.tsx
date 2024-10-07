@@ -32,8 +32,8 @@ export default function ActionMenu() {
                     <Image width={800} height={800} src={'/map.png'} alt={''} className='absolute'></Image>
                     <div className='flex gap-4 text-xl absolute z-10'>
                         {/* tag Link sem transicao ou tag a com delay */}
-                        <Link href="/game/b1">B1</Link>
-                        <Link href="/game/b2">B2</Link>
+                        <a href="/game/b1">B1</a>
+                        <a href="/game/b2">B2</a>
                     </div>
                 </div>
             )}
