@@ -1,5 +1,6 @@
 import ActionMenu from "@/components/action-menu";
 import Caption from "@/components/caption";
+import HideScreen from "@/components/hide-screen";
 
 export default function Home() {
   const captions = [
@@ -10,6 +11,7 @@ export default function Home() {
 
   return (
     <>
+      <HideScreen enable={false} />
       <div className="background-b1"></div>
       <ActionMenu />
       <Caption captions={captions} enable={true} />

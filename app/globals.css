@@ -41,6 +41,17 @@
     transform: translateY(-360px);
     z-index: -1;
   }
+
+  .background-molde {
+    background-image: url('/MOLDE.png');
+    background-size: cover;
+    image-rendering: pixelated;
+    position: fixed;
+    width: 100vw;
+    height: 1400px;
+    overflow: hidden;
+    z-index: 50;
+  }
 }
 
 html,

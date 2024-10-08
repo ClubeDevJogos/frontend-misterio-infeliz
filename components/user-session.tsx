@@ -3,7 +3,6 @@ import { nextAuthOptions } from "@/app/lib/auth/nextAuthOptions";
 
 export default async function UserSession() {
     const session = await getServerSession(nextAuthOptions)
-    console.log(session)
 
     return (
         <>

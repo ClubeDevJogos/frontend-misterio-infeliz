@@ -2,7 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 
-export default function HideScreen() {
+interface HideScreenProps {
+    enable: boolean
+}
+
+export default function HideScreen({ enable }: HideScreenProps) {
     const [progress, setProgress] = useState(0);
     const [isKeydown, setIsKeydown] = useState(false);
 
@@ -41,10 +45,12 @@ export default function HideScreen() {
 
     return (
         <>
-            <div className="w-screen h-screen bg-black absolute z-50">
-                <p className="text-white">HideScreen</p>
-                <progress className='accent-red-900' value={progress} max="1" />
-            </div>
+            {enable && (
+                <div className="background-molde">
+                    <p className="text-white">HideScreen</p>
+                    <progress className='accent-red-900' value={progress} max="1" />
+                </div>
+            )}
         </>
     );
 }
