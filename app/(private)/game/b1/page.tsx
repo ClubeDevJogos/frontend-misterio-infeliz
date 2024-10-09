@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <HideScreen enable={false} />
       <div className="background-b1"></div>
-      <ActionMenu />
+      <ActionMenu block={"Bloco B"} name={"Sala B1"} />
       <Caption captions={captions} enable={true} />
     </>
   );

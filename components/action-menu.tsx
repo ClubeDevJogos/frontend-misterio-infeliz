@@ -1,11 +1,15 @@
 "use client"
 
 import { Map, Settings } from 'lucide-react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from "react";
 
-export default function ActionMenu() {
+interface ActionMenuProps {
+    name: String,
+    block: String
+}
+
+export default function ActionMenu({ name, block }: ActionMenuProps) {
     const [map, setMap] = useState(false);
     const [settings, setSettings] = useState(false);
 
@@ -15,8 +19,8 @@ export default function ActionMenu() {
                 <div className='flex items-center justify-center gap-3'>
                     <div className='w-1 h-14 bg-white' />
                     <div>
-                        <p className='text-3xl font-bold text-white'>Bloco B</p>
-                        <p className='text-lg text-white'>Sala B1</p>
+                        <p className='text-3xl font-bold text-white'>{block}</p>
+                        <p className='text-lg text-white'>{name}</p>
                     </div>
                 </div>
                 <div className='flex gap-4'>
@@ -24,16 +28,13 @@ export default function ActionMenu() {
                     <button onClick={() => setSettings(!settings)}><Settings size={54} color="white" /></button>
                 </div>
             </div>
-            <div className='w-screen h-screen absolute'>
-
-            </div>
             {map && (
                 <div className='w-screen h-screen flex items-center justify-center absolute bg-black bg-opacity-60'>
-                    <Image width={800} height={800} src={'/map.png'} alt={''} className='absolute'></Image>
+                    <Image width={1000} height={1000} src={'/mapIF.png'} alt={''} className='absolute'></Image>
                     <div className='flex gap-4 text-xl absolute z-10'>
-                        {/* tag Link sem transicao ou tag a com delay */}
                         <a href="/game/b1">B1</a>
                         <a href="/game/b2">B2</a>
+                        <a href="/game/secretRoom">secretRoom</a>
                     </div>
                 </div>
             )}
