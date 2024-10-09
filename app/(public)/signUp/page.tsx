@@ -17,7 +17,8 @@ export default function SingIn() {
             password
         }
 
-        const response = await createUser(user)
+        //const response = 
+        await createUser(user)
 
         //redirecionar
     }

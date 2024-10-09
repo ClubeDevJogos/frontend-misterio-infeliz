@@ -10,7 +10,7 @@ export const nextAuthOptions: NextAuthOptions = {
                 password: { label: "password", type: "password" }
             },
 
-            async authorize(credentials, req) {
+            async authorize(credentials) {
                 const response = await fetch(`http://201.23.18.145:4000/session`, {
                     method: "POST",
                     headers: {
@@ -40,7 +40,7 @@ export const nextAuthOptions: NextAuthOptions = {
             return token
         },
         async session({ session, token }) {
-            session.user = token.user as any
+            session.user = token.user as { username: string; email: string; token: string };
             return session
         }
     }

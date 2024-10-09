@@ -1,11 +1,12 @@
 interface CreateUserInterface {
-    username: String,
-    email: String,
-    password: String
+    username: string,
+    email: string,
+    password: string
 }
 
 export default async function createUser(userParameters: CreateUserInterface) {
-    const response = await fetch("http://201.23.18.145:4000/user", {
+    //const data =
+    await fetch("http://201.23.18.145:4000/user", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
