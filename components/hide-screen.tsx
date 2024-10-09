@@ -41,7 +41,7 @@ export default function HideScreen({ enable }: HideScreenProps) {
             window.removeEventListener('keyup', handleKeyRelease);
             clearInterval(interval);
         };
-    }, [isKeydown]);
+    }, [isKeydown, handleKeyPress, handleKeyRelease]);
 
     return (
         <>

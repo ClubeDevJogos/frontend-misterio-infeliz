@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { useState } from "react";
 
 interface ActionMenuProps {
-    name: String,
-    block: String
+    name: string,
+    block: string
 }
 
 export default function ActionMenu({ name, block }: ActionMenuProps) {

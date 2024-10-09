@@ -8,7 +8,7 @@ interface CaptionProps {
         name: string;
         content: string;
     }>,
-    enable: Boolean
+    enable: boolean
 }
 
 export default function Caption({ captions, enable }: CaptionProps) {
@@ -32,7 +32,7 @@ export default function Caption({ captions, enable }: CaptionProps) {
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
         };
-    }, []);
+    }, [handleKeyPress]);
 
     return (
         <>
