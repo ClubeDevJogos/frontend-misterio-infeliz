@@ -6,7 +6,7 @@ interface CreateUserInterface {
 
 export default async function createUser(userParameters: CreateUserInterface) {
     //const data =
-    await fetch("http://201.23.18.145:4000/user", {
+    await fetch("http://18.229.140.80:4000/user", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

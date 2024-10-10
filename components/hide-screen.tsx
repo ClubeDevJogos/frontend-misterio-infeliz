@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import BlinkLight from './blink-light';
 
 interface HideScreenProps {
     enable: boolean
@@ -9,6 +10,7 @@ interface HideScreenProps {
 export default function HideScreen({ enable }: HideScreenProps) {
     const [progress, setProgress] = useState(0);
     const [isKeydown, setIsKeydown] = useState(false);
+
 
     const handleKeyPress = (e: KeyboardEvent) => {
         if (e.code === 'Space') {
@@ -48,7 +50,8 @@ export default function HideScreen({ enable }: HideScreenProps) {
             {enable && (
                 <div className="background-molde">
                     <p className="text-white">HideScreen</p>
-                    <progress className='accent-red-900' value={progress} max="1" />
+                    <progress className='accent-red-500' value={progress} max="1" />
+                    <BlinkLight enable={false} />
                 </div>
             )}
         </>
