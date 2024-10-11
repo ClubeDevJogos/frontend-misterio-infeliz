@@ -1,6 +1,7 @@
 import ActionMenu from "@/components/action-menu";
 import Caption from "@/components/caption";
 import HideScreen from "@/components/hide-screen";
+import InteractiveButton from "@/components/interactive-button";
 
 export default function Home() {
   const captions = [
@@ -14,6 +15,7 @@ export default function Home() {
       <HideScreen enable={false} />
       <div className="background-b1"></div>
       <ActionMenu block={"Bloco B"} name={"Sala B1"} />
+      <InteractiveButton />
       <Caption captions={captions} enable={true} />
     </>
   );

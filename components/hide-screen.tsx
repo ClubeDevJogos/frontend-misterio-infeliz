@@ -49,7 +49,6 @@ export default function HideScreen({ enable }: HideScreenProps) {
         <>
             {enable && (
                 <div className="background-molde">
-                    <p className="text-white">HideScreen</p>
                     <progress className='accent-red-500' value={progress} max="1" />
                     <BlinkLight enable={false} />
                 </div>

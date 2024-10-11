@@ -11,7 +11,7 @@ export const nextAuthOptions: NextAuthOptions = {
             },
 
             async authorize(credentials) {
-                const response = await fetch(`http://18.229.140.80:4000/session`, {
+                const response = await fetch(`http://clubedevjogos.com.br:4000/session`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

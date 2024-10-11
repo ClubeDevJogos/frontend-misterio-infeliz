@@ -18,6 +18,17 @@
     z-index: -1;
   }
 
+  .background-login {
+    background-image: url('/D6-BANCOS.png');
+    background-size: cover;
+    image-rendering: pixelated;
+    position: fixed;
+    width: 100vw;
+    height: 1000px;
+    overflow: hidden;
+    z-index: -1;
+  }
+
   .background-b1 {
     background-image: url('/B1.png');
     background-size: cover;
