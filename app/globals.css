@@ -54,23 +54,26 @@
   }
 
   .background-secretRoom {
-    background-size: cover;
-    image-rendering: pixelated;
-    position: fixed;
-    width: 100vw;
-    overflow: hidden;
-    transform: translateY(-100px);
-    z-index: -1;
-  }
-
-  .background-intoSecretRoom {
+    background-image: url('/secretRoom.png');
     background-size: cover;
     image-rendering: pixelated;
     position: fixed;
     width: 100vw;
     height: 1400px;
     overflow: hidden;
-    transform: translateY(-320px);
+    transform: translateY(-100px);
+    z-index: -1;
+  }
+  
+  .background-intoSecretRoom {
+    background-image: url('/intoSecretRoom.png');
+    background-size: cover;
+    image-rendering: pixelated;
+    position: fixed;
+    width: 100vw;
+    height: 1400px;
+    overflow: hidden;
+    transform: translateY(-320);
     z-index: -1;
   }
 

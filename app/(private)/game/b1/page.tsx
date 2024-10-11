@@ -15,7 +15,7 @@ export default function Home() {
       <HideScreen enable={false} />
       <div className="background-b1"></div>
       <ActionMenu block={"Bloco B"} name={"Sala B1"} />
-      <InteractiveButton />
+      <InteractiveButton href="https://youtube.com" type="door"/>
       <Caption captions={captions} enable={true} />
     </>
   );
