@@ -8,10 +8,11 @@ interface CaptionProps {
         name: string;
         content: string;
     }>,
-    enable: boolean
+    enable: boolean,
+    onClose?: () => void
 }
 
-export default function Caption({ captions, enable }: CaptionProps) {
+export default function Caption({ captions, enable, onClose = () => { } }: CaptionProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showCaptions, setShowCaptions] = useState(enable);
 
@@ -20,6 +21,7 @@ export default function Caption({ captions, enable }: CaptionProps) {
             setCurrentIndex((prevIndex) => {
                 if (prevIndex === captions.length - 1) {
                     setShowCaptions(false);
+                    onClose();
                     return prevIndex;
                 }
                 return prevIndex + 1;

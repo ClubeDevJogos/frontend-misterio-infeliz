@@ -3,11 +3,14 @@
 import createUser, { CreateUserInterface } from "@/app/lib/auth/createUser"
 import { SyntheticEvent, useState } from "react"
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function SingIn() {
     const [username, setUserName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    const router = useRouter()
 
     async function handleSubmit(event: SyntheticEvent) {
         event.preventDefault()
@@ -18,9 +21,11 @@ export default function SingIn() {
             password
         }
 
-        await createUser(user)
+        const response = await createUser(user)
 
-        //redirecionar
+        if (response.ok) {
+            router.push("/login")
+        }
     }
 
     return (

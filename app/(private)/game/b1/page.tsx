@@ -10,13 +10,17 @@ export default function Home() {
     { name: "Luana Sombra", content: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout." },
   ]
 
+  const captionLoked = [
+    { name: "Luana Sombra", content: "Não abre! Acho que a porta está trancada!" }
+  ]
+
   return (
     <>
       <HideScreen enable={false} />
       <div className="background-b1"></div>
       <ActionMenu block={"Bloco B"} name={"Sala B1"} />
-      <InteractiveButton href="https://youtube.com" type="door"/>
-      <Caption captions={captions} enable={true} />
+      <InteractiveButton href={"/game/b1/intoB1"} type={"door"} locked={true} captions={captionLoked} />
+      <Caption captions={captions} enable={false} />
     </>
   );
 }

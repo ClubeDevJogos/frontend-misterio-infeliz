@@ -14,14 +14,14 @@ export default function Login() {
     async function handleSubmit(event: SyntheticEvent) {
         event.preventDefault()
 
-        const result = await signIn("credentials", {
+        const response = await signIn("credentials", {
             email: email + "@aluno.feliz.ifrs.edu.br",
             password,
             redirect: false
         })
 
-        if (result!.ok) {
-            router.replace("/game/b1")
+        if (response!.ok) {
+            router.replace("/game")
         }
     }
 

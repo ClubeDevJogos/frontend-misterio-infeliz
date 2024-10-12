@@ -1,6 +1,7 @@
 "use client"
 
 import { Map, Settings } from 'lucide-react';
+import { signOut } from 'next-auth/react';
 import Image from 'next/image';
 import { useState } from "react";
 
@@ -12,6 +13,10 @@ interface ActionMenuProps {
 export default function ActionMenu({ name, block }: ActionMenuProps) {
     const [map, setMap] = useState(false);
     const [settings, setSettings] = useState(false);
+
+    function teste() {
+        signOut()
+    }
 
     return (
         <>
@@ -40,8 +45,8 @@ export default function ActionMenu({ name, block }: ActionMenuProps) {
             )}
             {settings && (
                 <div className='w-screen h-screen flex items-center justify-center absolute bg-black bg-opacity-60'>
-                    <div className='w-[1000px] h-[600px] bg-gray-700 rounded'>
-
+                    <div className='w-[1000px] h-[600px] bg-gray-700 rounded absolute z-10'>
+                        <button onClick={teste}>Sair</button>
                     </div>
                 </div>
             )}
