@@ -3,25 +3,14 @@ import getUserMission from "../helpers/getUserMission";
 export default async function getRedirectDir() {
     const mission = await getUserMission()
 
+    console.log(mission)
+
     switch (mission) {
         case "1":
-            return {
-                redirect: "/game/firstGate",
-                block: [
-                    "/game/b1",
-                    "/game/b2",
-                    "/game/secretRoom"
-                ]
-            }
+            return "/game/firstGate"
         case "2":
-            return {
-                redirect: "/game/b1",
-                block: [
-                    "/game/firstGate",
-                    "/game/secondGate",
-                    "/game/secretRoom"
-                ]
-            }
-
+            return "/game/b1"
+        default:
+            return "/"
     }
 }

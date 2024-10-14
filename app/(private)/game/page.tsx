@@ -3,5 +3,5 @@ import { redirect } from 'next/navigation';
 
 export default async function Game() {
     const redirectDir = await getRedirectDir()
-    redirect(redirectDir?.redirect!);
+    redirect(redirectDir!);
 }
