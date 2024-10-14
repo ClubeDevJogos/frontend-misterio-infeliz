@@ -7,14 +7,11 @@ export default async function chengeUserMission() {
     const session = await getServerSession(nextAuthOptions)
     const authToken = "Bearer " + session?.user.token
 
-    const response = await fetch("http://clubedevjogos.com.br:4000/updateMissionOfUser", {
+    await fetch("http://clubedevjogos.com.br:4000/updateMissionOfUser", {
         method: "POST",
         headers: {
             "Accept": "*/*",
             "authorization": authToken
         }
     })
-
-    const data = response.json()
-    return data
 }
