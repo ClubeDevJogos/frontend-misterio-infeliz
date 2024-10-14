@@ -5,17 +5,27 @@ import ActionMenu from "@/components/action-menu";
 import Caption from "@/components/caption";
 import InteractiveButton from "@/components/interactive-button";
 import SideArrows from "@/components/side-arrows";
+import Cookie from "js-cookie";
+import { useState } from "react";
 
 export default function SecondGate() {
+    const [showCaption, setShowCaption] = useState(false)
+
     const captions = [
-        { name: "Luana Sombra", content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
-        { name: "Luana Sombra", content: "Various versions have evolved over the years, sometimes by accident." },
-        { name: "Luana Sombra", content: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout." },
+        { name: "Luana Sombra", content: "João... A entrada lateral está aberta..." },
+        { name: "João Beckenbauer (Telefone)", content: "Perfeito, a entrada lateral... Ótima ideia." },
+        { name: "Luana Sombra", content: "O campus está bem escuro... Parece aqueles filmes de terror slasher dos anos 90." },
+        { name: "João Beckenbauer (Telefone)", content: 'Tome cuidado... Por que afinal... "Qual é o seu filme de terror favorito?".' },
+        { name: "Luana Sombra", content: "HaHaHa... Muito engraçado..." },
     ]
 
-    async function teste() {
-        const response = await chengeUserMission()
-        console.log(response)
+    async function chengeMission() {
+        await chengeUserMission()
+    }
+
+    if(!Cookie.get("secondGate")){
+        setShowCaption(true);
+        Cookie.set("secondGate", "true")
     }
 
     return (
@@ -23,8 +33,8 @@ export default function SecondGate() {
             <div className="w-screen h-screen bg-gray-900 absolute"></div>
             <SideArrows left={true} hrefLeft={"/game/firstGate"} />
             <ActionMenu block={"Bloco B"} name={"Segunda Entrada"} />
-            <InteractiveButton href={"/game/b1"} type={"door"} onClick={teste} />
-            <Caption captions={captions} enable={false} />
+            <InteractiveButton href={"/game/b1"} type={"door"} onClick={chengeMission} />
+            <Caption captions={captions} enable={showCaption} />
         </>
     );
 }

@@ -1,8 +1,9 @@
 "use client"
 
-import { Map, Settings } from 'lucide-react';
+import { Map, Menu } from 'lucide-react';
 import { signOut } from 'next-auth/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from "react";
 
 interface ActionMenuProps {
@@ -14,7 +15,7 @@ export default function ActionMenu({ name, block }: ActionMenuProps) {
     const [map, setMap] = useState(false);
     const [settings, setSettings] = useState(false);
 
-    function teste() {
+    function exitSession() {
         signOut()
     }
 
@@ -30,23 +31,25 @@ export default function ActionMenu({ name, block }: ActionMenuProps) {
                 </div>
                 <div className='flex gap-4'>
                     <button onClick={() => setMap(!map)}><Map size={54} color="white" /></button>
-                    <button onClick={() => setSettings(!settings)}><Settings size={54} color="white" /></button>
+                    <button onClick={() => setSettings(!settings)}><Menu size={54} color="white" /></button>
                 </div>
             </div>
             {map && (
                 <div className='w-screen h-screen flex items-center justify-center absolute bg-black bg-opacity-60'>
                     <Image width={1000} height={1000} src={'/mapIF.png'} alt={''} className='absolute'></Image>
                     <div className='flex gap-4 text-xl absolute z-10'>
-                        <a href="/game/b1">B1</a>
-                        <a href="/game/b2">B2</a>
-                        <a href="/game/secretRoom">secretRoom</a>
+                        <Link href="/game/b1">B1</Link>
+                        <Link href="/game/b2">B2</Link>
+                        <Link href="/game/secretRoom">secretRoom</Link>
                     </div>
                 </div>
             )}
             {settings && (
                 <div className='w-screen h-screen flex items-center justify-center absolute bg-black bg-opacity-60'>
-                    <div className='w-[1000px] h-[600px] bg-gray-700 rounded absolute z-10'>
-                        <button onClick={teste}>Sair</button>
+                    <div className='w-[400px] h-[500px] bg-gray-800 rounded absolute z-10 flex flex-col items-center justify-center gap-3'>
+                        <p className='text-3xl text-white font-bold'>Menu</p>
+                        <Link className='text-white' href={"/"}>Pagina Inicial</Link>
+                        <button className='w-20 text-white p-2 bg-red-500 rounded' onClick={exitSession}>Sair</button>
                     </div>
                 </div>
             )}

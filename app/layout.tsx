@@ -33,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${pixelifySans.variable} antialiased`}
       >
+        <div className="w-screen h-screen absolute z-10 bg-black opacity-35"></div>
         {children}
       </body>
     </html>

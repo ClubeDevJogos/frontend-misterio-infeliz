@@ -89,6 +89,17 @@
     z-index: -1;
   }
 
+  .background-firstGate {
+    background-image: url('/firstGate.png');
+    background-size: cover;
+    image-rendering: pixelated;
+    position: fixed;
+    width: 100vw;
+    height: 750px;
+    overflow: hidden;
+    z-index: -1;
+  }
+
   .background-molde {
     background-image: url('/MOLDE.png');
     background-size: cover;

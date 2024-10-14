@@ -10,6 +10,7 @@ export default function Login() {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [errorMessage, setErrorMessage] = useState(false)
 
     async function handleSubmit(event: SyntheticEvent) {
         event.preventDefault()
@@ -22,6 +23,8 @@ export default function Login() {
 
         if (response!.ok) {
             router.replace("/game")
+        } else {
+            setErrorMessage(true)
         }
     }
 
@@ -38,6 +41,7 @@ export default function Login() {
                             <p className="p-1 rounded bg-transparent bg-zinc-900 text-zinc-500 text-sm">@aluno.feliz.ifrs.edu.br</p>
                         </div>
                         <input className="h-10 rounded-lg bg-transparent border-2 border-gray-900 text-white outline-none pl-2" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
+                        { errorMessage && <p className="text-red-500 text-sm">Email ou senha incoreto.</p>}
                         <button type="submit" className="h-10 rounded-lg text-zinc-400 bg-gray-900">Entrar</button>
                         <p className="text-zinc-600 text-sm text-center">Não possui uma conta? <a href="/signUp">Criar conta</a></p>
                     </form>

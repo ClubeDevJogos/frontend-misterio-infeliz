@@ -1,26 +1,41 @@
+"use client"
+
 import ActionMenu from "@/components/action-menu";
 import Caption from "@/components/caption";
 import InteractiveButton from "@/components/interactive-button";
 import SideArrows from "@/components/side-arrows";
+import Cookie from "js-cookie";
+import { useState } from "react";
 
-export default async function SecondGate() {
+export default function SecondGate() {
+    const [showCaption, setShowCaption] = useState(false)
+
     const captions = [
-        { name: "Luana Sombra", content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
-        { name: "Luana Sombra", content: "Various versions have evolved over the years, sometimes by accident." },
-        { name: "Luana Sombra", content: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout." },
+        { name: "Luana Sombra", content: "João?... Tá me ouvindo..." },
+        { name: "João Beckenbauer (Telefone)", content: "Oi... Sim, estou ouvindo." },
+        { name: "Luana Sombra", content: "Cheguei aqui no IF." },
+        { name: "João Beckenbauer (Telefone)", content: "Você avistou alguma coisa logo de entrada?" },
+        { name: "Luana Sombra", content: "Ainda não... Vou verificar se o portão está destrancado." },
+        { name: "João Beckenbauer (Telefone)", content: "Beleza... Qualquer coisa que encontrar me avisa." },
+        { name: "Luana Sombra", content: "Pode deixar!" },
     ]
 
     const captionLoked = [
-        { name: "Luana Sombra", content: "Não acredito! Está trancado, vou precisar encontrar outra maneira de entrar." }
+        { name: "Luana Sombra", content: "Está trancado, vou precisar encontrar outra maneira de entrar!" }
     ]
+
+    if(!Cookie.get("firstGate")){
+        setShowCaption(true);
+        Cookie.set("firstGate", "true")
+    }
 
     return (
         <>
-            <div className="w-screen h-screen bg-gray-800 absolute"></div>
+            <div className="background-firstGate"></div>
             <SideArrows right={true} hrefRight={"/game/secondGate"} />
             <ActionMenu block={"Bloco D"} name={"Entrada Principal"} />
             <InteractiveButton href={"/game/secondGate"} type={"door"} locked={true} captions={captionLoked} />
-            <Caption captions={captions} enable={false} />
+            <Caption captions={captions} enable={showCaption} />
         </>
     );
 }

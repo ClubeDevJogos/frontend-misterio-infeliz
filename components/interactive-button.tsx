@@ -38,11 +38,11 @@ export default function InteractiveButton({ type, href, locked, captions, onClic
     return (
         <>
             <div className="w-screen h-screen pt-10 absolute flex items-end justify-end">
-                <button className="p-6 z-50" onClick={openDoor}>
-                    {type == "door" && (
+                {type == "door" && (
+                    <button className="p-6 z-50" onClick={openDoor}>
                         <DoorOpen size={54} color="white" />
-                    )}
-                </button>
+                    </button>
+                )}
                 {showCaption && (
                     <Caption captions={captions!} enable={true} onClose={handleCloseCaption} />
                 )}
