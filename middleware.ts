@@ -15,8 +15,11 @@ export async function middleware(request: NextRequest) {
     ],
     3: [
       "/game/firstGate",
-      "/game/secondGate",
-      "/game/secretRoom"
+      "/game/secondGate"
+    ],
+    4: [
+      "/game/firstGate",
+      "/game/secondGate"
     ]
   }
 
@@ -45,6 +48,11 @@ export async function middleware(request: NextRequest) {
       break;
     case "3":
       if(blockedDirs[3].includes(request.nextUrl.pathname)) {
+        return NextResponse.redirect(new URL('/game', request.url))
+      }
+      break;
+    case "4":
+      if(blockedDirs[4].includes(request.nextUrl.pathname)) {
         return NextResponse.redirect(new URL('/game', request.url))
       }
       break;

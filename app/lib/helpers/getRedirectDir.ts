@@ -8,6 +8,10 @@ export default async function getRedirectDir() {
             return "/game/firstGate"
         case "2":
             return "/game/b1"
+        case "3":
+            return "/game/biblioteca"
+        case "4":
+            return "/game/secretRoom/intoSecretRoom"
         default:
             return "/"
     }

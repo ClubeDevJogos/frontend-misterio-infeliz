@@ -13,7 +13,7 @@ export default function BlinkLight({ enable }: BlinkLightProps) {
         setInterval(() => {
             const randomValue = Math.random() > 0.5;
             setLight(randomValue);
-        }, 350);
+        }, 200);
     }
 
     useEffect(() => {
