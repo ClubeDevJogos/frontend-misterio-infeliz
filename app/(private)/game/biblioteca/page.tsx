@@ -31,7 +31,7 @@ export default function Home() {
       <div className="background-b2"></div>
       <SideArrows left={true} hrefLeft={"/game/b1"} />
       <ActionMenu block={"Bloco B"} name={"Biblioteca"} />
-      <InteractiveButton href={"/game/b2/intoB2"} type={"door"} locked={loked} captions={captionLoked} />
+      <InteractiveButton href={"/game/biblioteca/intoBiblioteca"} type={"door"} locked={loked} captions={captionLoked} />
     </>
   );
 }

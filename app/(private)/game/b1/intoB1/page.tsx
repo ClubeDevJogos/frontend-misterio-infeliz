@@ -36,9 +36,9 @@ export default function Home() {
     await chengeUserMission()
   }
 
-  if(!Cookie.get("intoB1")){
+  if(!Cookie.get("captions_intoB1")){
     setShowCaption(true);
-    Cookie.set("intoB1", "true")
+    Cookie.set("captions_intoB1", "true")
   }
   
   return (

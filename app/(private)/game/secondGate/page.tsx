@@ -23,9 +23,9 @@ export default function SecondGate() {
         await chengeUserMission()
     }
 
-    if(!Cookie.get("secondGate")){
+    if(!Cookie.get("captions_secondGate")){
         setShowCaption(true);
-        Cookie.set("secondGate", "true")
+        Cookie.set("captions_secondGate", "true")
     }
 
     return (

@@ -24,9 +24,9 @@ export default function SecondGate() {
         { name: "Luana Sombra", content: "Está trancado, vou precisar encontrar outra maneira de entrar!" }
     ]
 
-    if(!Cookie.get("firstGate")){
+    if(!Cookie.get("captions_firstGate")){
         setShowCaption(true);
-        Cookie.set("firstGate", "true")
+        Cookie.set("captions_firstGate", "true")
     }
 
     return (

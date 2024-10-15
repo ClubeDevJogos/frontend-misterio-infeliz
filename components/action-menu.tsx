@@ -4,7 +4,9 @@ import { Map, Menu } from 'lucide-react';
 import { signOut } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Cookie from "js-cookie";
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 
 interface ActionMenuProps {
     name: string,
@@ -15,8 +17,14 @@ export default function ActionMenu({ name, block }: ActionMenuProps) {
     const [map, setMap] = useState(false);
     const [settings, setSettings] = useState(false);
 
+    const router = useRouter()
+
     function exitSession() {
+        Cookie.remove("captions_firstGate");
+        Cookie.remove("captions_secondGate");
+        Cookie.remove("captions_intoB1");
         signOut()
+        router.push("/")
     }
 
     return (
