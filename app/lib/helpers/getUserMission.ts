@@ -7,7 +7,7 @@ export default async function getUserMission() {
     const session = await getServerSession(nextAuthOptions)
     const authToken = "Bearer " + session?.user.token
 
-    const response = await fetch("http://clubedevjogos.com.br:4000/missionUser", {
+    const response = await fetch("http://clubedevjogos.com.br:8080/missionUser", {
         method: "GET",
         headers: {
             "Accept": "*/*",

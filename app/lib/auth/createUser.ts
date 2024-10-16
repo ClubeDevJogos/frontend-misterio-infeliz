@@ -5,7 +5,7 @@ interface CreateUserInterface {
 }
 
 export default async function createUser(userParameters: CreateUserInterface) {
-    const response = await fetch("http://clubedevjogos.com.br:4000/user", {
+    const response = await fetch("http://clubedevjogos.com.br:8080/user", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

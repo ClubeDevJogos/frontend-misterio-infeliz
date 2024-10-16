@@ -12,7 +12,7 @@ export const nextAuthOptions: NextAuthOptions = {
             },
 
             async authorize(credentials) {
-                const response = await fetch(`http://clubedevjogos.com.br:4000/session`, {
+                const response = await fetch(`http://clubedevjogos.com.br:8080/session`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

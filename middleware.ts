@@ -35,7 +35,7 @@ export async function middleware(request: NextRequest) {
   //Gambiearra para pegar o token e middleware utilizar
   const authToken = "Bearer " + request.cookies.get("token")?.value
 
-  const response = await fetch('http://clubedevjogos.com.br:4000/missionUser', {
+  const response = await fetch('http://clubedevjogos.com.br:8080/missionUser', {
     method: "GET",
     headers: {
       "Accept": "*/*",
