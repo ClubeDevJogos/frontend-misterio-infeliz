@@ -24,27 +24,28 @@ export default function Home() {
   useEffect(() => {
     async function handleMission() {
       const mission = await getUserMission();
-      if(mission == "2"){
+      if (mission == "2") {
         setShowKeys(true)
       }
     }
 
     handleMission();
   }, []);
-  async function chengeMission(){
+
+  async function chengeMission() {
     setShowKeys(false)
     await chengeUserMission()
   }
 
-  if(!Cookie.get("captions_intoB1")){
+  if (!Cookie.get("captions_intoB1")) {
     setShowCaption(true);
     Cookie.set("captions_intoB1", "true")
   }
-  
+
   return (
     <>
-      <button className="absolute top-[550px] left-[350px] cursor-pointer z-50" onClick={chengeMission}>
-        {showKeys && <Image src={"/chaves.png"} alt="chaves" width={70} height={70} />}
+      <button className="absolute top-[580px] left-[1500px] cursor-pointer z-50" onClick={chengeMission}>
+        {showKeys && <Image src={"/chaves.png"} alt="chaves" width={70} height={70} className="outline-none" />}
       </button>
       <div className="background-intoB1"></div>
       <ActionMenu block={"Bloco B"} name={"Sala B1"} />

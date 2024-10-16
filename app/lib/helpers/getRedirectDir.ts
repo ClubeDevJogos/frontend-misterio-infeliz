@@ -5,7 +5,7 @@ export default async function getRedirectDir() {
 
     switch (mission) {
         case "1":
-            return "/game/firstGate"
+            return "/game/introduction"
         case "2":
             return "/game/b1"
         case "3":

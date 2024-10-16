@@ -23,14 +23,14 @@ export default function SecondGate() {
         await chengeUserMission()
     }
 
-    if(!Cookie.get("captions_secondGate")){
+    if (!Cookie.get("captions_secondGate")) {
         setShowCaption(true);
         Cookie.set("captions_secondGate", "true")
     }
 
     return (
         <>
-            <div className="w-screen h-screen bg-gray-900 absolute"></div>
+            <div className="background-secondGate"></div>
             <SideArrows left={true} hrefLeft={"/game/firstGate"} />
             <ActionMenu block={"Bloco B"} name={"Segunda Entrada"} />
             <InteractiveButton href={"/game/b1"} type={"door"} onClick={chengeMission} />

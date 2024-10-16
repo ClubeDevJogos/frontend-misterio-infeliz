@@ -65,6 +65,18 @@
     z-index: -1;
   }
 
+  .background-intoBiblioteca {
+    background-image: url('/biblioteca.png');
+    background-size: cover;
+    image-rendering: pixelated;
+    position: fixed;
+    width: 100vw;
+    height: 1400px;
+    overflow: hidden;
+    transform: translateY(-360px);
+    z-index: -1;
+  }
+
   .background-secretRoom {
     background-image: url('/secretRoom.png');
     background-size: cover;
@@ -72,8 +84,8 @@
     position: fixed;
     width: 100vw;
     height: 1400px;
-    overflow: hidden;
     transform: translateY(-100px);
+    overflow: hidden;
     z-index: -1;
   }
 
@@ -84,8 +96,8 @@
     position: fixed;
     width: 100vw;
     height: 1400px;
+    transform: translateY(-360px);
     overflow: hidden;
-    transform: translateY(-320);
     z-index: -1;
   }
 
@@ -95,7 +107,19 @@
     image-rendering: pixelated;
     position: fixed;
     width: 100vw;
-    height: 750px;
+    height: 1000px;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .background-secondGate {
+    background-image: url('/secondGate.png');
+    background-size: cover;
+    image-rendering: pixelated;
+    position: fixed;
+    width: 100vw;
+    height: 1400px;
+    transform: translateY(-360px);
     overflow: hidden;
     z-index: -1;
   }

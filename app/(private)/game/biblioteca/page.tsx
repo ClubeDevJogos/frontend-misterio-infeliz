@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     async function handleMission() {
       const mission = await getUserMission();
-      if(mission == "3"){
+      if (parseInt(mission) >= 3) {
         setLocked(false)
       }
     }

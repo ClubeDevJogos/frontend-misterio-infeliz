@@ -1,32 +1,41 @@
 import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'  
- 
+import type { NextRequest } from 'next/server'
+
 export async function middleware(request: NextRequest) {
   const blockedDirs = {
     1: [
       "/game/b1",
-      "/game/b2",
-      "/game/secretRoom"
+      "/game/b1/intoB1",
+      "/game/biblioteca",
+      "/game/biblioteca/intoBiblioteca",
+      "/game/secretRoom",
+      "/game/secretRoom/intoSecretRoom"
     ],
     2: [
       "/game/firstGate",
       "/game/secondGate",
-      "/game/secretRoom"
+      "/game/secretRoom",
+      "/game/secretRoom/intoSecretRoom"
     ],
     3: [
       "/game/firstGate",
-      "/game/secondGate"
+      "/game/secondGate",
+      "/game/secretRoom/intoSecretRoom"
     ],
     4: [
       "/game/firstGate",
-      "/game/secondGate"
+      "/game/secondGate",
+      "/game/b1",
+      "/game/b1/intoB1",
+      "/game/biblioteca",
+      "/game/biblioteca/intoBiblioteca"
     ]
   }
 
   //Gambiearra para pegar o token e middleware utilizar
   const authToken = "Bearer " + request.cookies.get("token")?.value
 
-  const response = await fetch('http://clubedevjogos.com.br:4000/missionUser',{
+  const response = await fetch('http://clubedevjogos.com.br:4000/missionUser', {
     method: "GET",
     headers: {
       "Accept": "*/*",
@@ -37,22 +46,22 @@ export async function middleware(request: NextRequest) {
 
   switch (data) {
     case "1":
-      if(blockedDirs[1].includes(request.nextUrl.pathname)) {
+      if (blockedDirs[1].includes(request.nextUrl.pathname)) {
         return NextResponse.redirect(new URL('/game', request.url))
       }
       break;
     case "2":
-      if(blockedDirs[2].includes(request.nextUrl.pathname)) {
+      if (blockedDirs[2].includes(request.nextUrl.pathname)) {
         return NextResponse.redirect(new URL('/game', request.url))
       }
       break;
     case "3":
-      if(blockedDirs[3].includes(request.nextUrl.pathname)) {
+      if (blockedDirs[3].includes(request.nextUrl.pathname)) {
         return NextResponse.redirect(new URL('/game', request.url))
       }
       break;
     case "4":
-      if(blockedDirs[4].includes(request.nextUrl.pathname)) {
+      if (blockedDirs[4].includes(request.nextUrl.pathname)) {
         return NextResponse.redirect(new URL('/game', request.url))
       }
       break;
